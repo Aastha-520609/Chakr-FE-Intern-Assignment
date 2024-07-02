@@ -9,6 +9,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
+  TooltipProvider,
 } from "@/components/ui/tooltip"
 
 interface NavProps {
@@ -24,6 +25,7 @@ interface NavProps {
 
 export function Nav({ links, isCollapsed }: NavProps) {
   return (
+    <TooltipProvider>
     <div
       data-collapsed={isCollapsed}
       className="group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2"
@@ -84,5 +86,6 @@ export function Nav({ links, isCollapsed }: NavProps) {
         )}
       </nav>
     </div>
+    </TooltipProvider>
   )
 }

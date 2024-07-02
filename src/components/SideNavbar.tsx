@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import {useState} from 'react'
 import {Nav} from "./ui/nav";
 import {Separator} from "./ui/separator";
+import {Button} from "./ui/button";
 
 type Props = {}
 
@@ -19,14 +20,36 @@ import {
     HandHeart,
     HeartHandshake,
     Users2,
+    PanelLeftClose,
+    PanelRightClose,
   } from "lucide-react"
 
 export default function SideNavbar({}: Props) {
+    const [isCollapsed, setIsCollapsed] = useState(false);
+
+    const handleToggleCollapse = () => {
+      setIsCollapsed(!isCollapsed);
+    };
+
+    function toggleSidebar()
+    {
+      setIsCollapsed(!isCollapsed)
+    }
+  
   return (
-    <div>
+    <div className="relative min-w-[80px] px-3 pt-12">
+     <div className="absolute right-[-20px] top-3">
+        <Button
+           onClick={toggleSidebar} 
+           variant="ghost" 
+           className="p-2 h-8 w-8"
+        > 
+            {isCollapsed ? <PanelRightClose /> : <PanelLeftClose />}
+        </Button>
+     </div>
         <Nav
-            isCollapsed={false}
-            links={[
+            isCollapsed={isCollapsed}
+            links={[  
               {
                 title: "Dashboard",
                 href: "/dashboard",
@@ -35,9 +58,9 @@ export default function SideNavbar({}: Props) {
               },
             ]}
         />
-        <Separator type="line" />
+         {!isCollapsed && <Separator type="line" />}
         <Nav
-            isCollapsed={false}
+            isCollapsed={isCollapsed}
             links={[
               {
                 title: "Search",
@@ -59,9 +82,9 @@ export default function SideNavbar({}: Props) {
               },
             ]}
           />
-          <Separator type="text" text="Sales" />
+          {!isCollapsed && <Separator type="text" text="Sales" />}
           <Nav
-            isCollapsed={false}
+            isCollapsed={isCollapsed}
             links={[
               {
                 title: "People",
@@ -95,9 +118,9 @@ export default function SideNavbar({}: Props) {
               },
             ]}
           />
-        <Separator type="text" text="Productivity" />
+        {!isCollapsed && <Separator type="text" text="Productivity" />}
         <Nav
-            isCollapsed={false}
+            isCollapsed={isCollapsed}
             links={[
               {
                 title: "Tasks",
@@ -113,9 +136,9 @@ export default function SideNavbar({}: Props) {
               },
             ]}
           />
-        <Separator type="text" text="Community" />
+        {!isCollapsed && <Separator type="text" text="Community" />}
         <Nav
-            isCollapsed={false}
+            isCollapsed={isCollapsed}
             links={[
               {
                 title: "Forums",
