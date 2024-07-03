@@ -3,6 +3,7 @@ import { DataTable } from '@/components/DataTable'
 import { ColumnDef } from '@tanstack/react-table'
 import PageTitle from "@/components/PageTitle"
 
+
 type Payment = {
   Name: string;
   DomainName: string;
@@ -11,7 +12,7 @@ type Payment = {
   Email: string;
 };
 
-const data: Payment[] = [
+export const data: Payment[] = [
   {
     Name: "XYZ",
     DomainName: "ABC",
@@ -56,7 +57,7 @@ const data: Payment[] = [
   },
 ];
  
-const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "Name",
     header: "Name",
