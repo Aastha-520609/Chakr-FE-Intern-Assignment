@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Page, { data } from '@/app/companies/page';
+import Page from '@/app/companies/page';
 
 import {
     Command,
@@ -65,22 +65,29 @@ export function CommandMenu() {
                             <p onClick={handleItemClick}>Prospects</p>
                         </Link>
                     </CommandItem>
-                    <CommandItem
+                    {/* <CommandItem
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
                         <Link href="/companies">
-                            <p onClick={handleItemClick}>Companies</p>
+                        <p onClick={handleItemClick}>Companies</p>
                         </Link>
                         {showDropdown && (
-                            <div className="absolute top-0 right-0 bg-gray-200 shadow-md py-2 rounded-md z-10">
-                                {data.map((user, index) => (
-                                    <Link key={index} href={`/user/${user.Name}`}>
-                                        <p className="px-4 py-2 text-sm cursor-pointer hover:bg-gray-300">{user.Name}</p>
-                                    </Link>
-                                ))}
-                            </div>
+                        <div className="absolute top-0 right-0 bg-gray-200 shadow-md py-2 rounded-md z-10">
+                            {Page.payments.map((user: Page.payments, index: number) => (
+                            <Link key={index} href={`/user/${user.Name}`}>
+                                <p className="px-4 py-2 text-sm cursor-pointer hover:bg-gray-300">
+                                {user.Name}
+                                </p>
+                            </Link>
+                            ))}
+                        </div>
                         )}
+                    </CommandItem> */}
+                    <CommandItem>
+                        <Link href="/companies">
+                            <p onClick={handleItemClick}>Companies</p>
+                        </Link>
                     </CommandItem>
                     <CommandItem>
                         <Link href="/opportunities">

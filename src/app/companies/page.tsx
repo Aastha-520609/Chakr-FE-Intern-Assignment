@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { DataTable } from '@/components/DataTable'
 import { ColumnDef } from '@tanstack/react-table'
@@ -12,7 +13,7 @@ type Payment = {
   Email: string;
 };
 
-export const data: Payment[] = [
+const payments: Payment[] = [
   {
     Name: "XYZ",
     DomainName: "ABC",
@@ -57,7 +58,7 @@ export const data: Payment[] = [
   },
 ];
  
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "Name",
     header: "Name",
@@ -84,7 +85,7 @@ const Page: React.FC = () => {
     return (
       <div className = "flex flex-col gap-5 w-full">
           <PageTitle title="Companies"/>
-          <DataTable columns={columns} data={data} />
+          <DataTable columns={columns} data={payments} />
       </div>
     );
   };
