@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import {cn} from '../lib/utils';
 import SideNavbar from "@/components/SideNavbar";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,11 +27,12 @@ export default function RootLayout({
         }
         )}
       >
-        {/* sidebar */}
-        {/* <p className = "border">Sidebar</p> */}
         <SideNavbar />
-        {/* mainpage */}
-        <div className = "p-8 w-full">{children}</div>
+        <main className="w-full p-5">
+          <Header />
+
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -3,32 +3,46 @@ import {useState} from 'react'
 import {Nav} from "./ui/nav";
 import {Separator} from "./ui/separator";
 import {Button} from "./ui/button";
-
-type Props = {}
+/* import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './ui/collapsible'; */
 
 import {
-    LayoutDashboardIcon,
-    Search,
-    Bell,
-    Settings,
-    UserCheck,
-    Building2,
-    TargetIcon,
-    Contact,
-    SquareCheckBig,
-    CalendarSearch,
-    HeartHandshake,
-    ReceiptText,
-    Users2,
-    PanelLeftClose,
-    PanelRightClose,
-  } from "lucide-react"
+  LayoutDashboardIcon,
+  Search,
+  Bell,
+  Settings,
+  UserCheck,
+  Building2,
+  TargetIcon,
+  Contact,
+  SquareCheckBig,
+  CalendarSearch,
+  HeartHandshake,
+  ReceiptText,
+  Users2,
+  PanelLeftClose,
+  PanelRightClose,
+} from "lucide-react";
+
+type NavItem = {
+    title: string;
+    label?: string;
+    icon: React.ElementType;
+    variant: "default" | "ghost";
+    href: string;
+};
+
+type Props = {};
 
 export default function SideNavbar({}: Props) {
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isSettingsExpanded, setIsSettingsExpanded] = useState(false);
 
     const handleToggleCollapse = () => {
       setIsCollapsed(!isCollapsed);
+    };
+
+    const toggleSettingsDropdown = () => {
+      setIsSettingsExpanded(!isSettingsExpanded);
     };
 
     function toggleSidebar()
@@ -81,7 +95,7 @@ export default function SideNavbar({}: Props) {
                 variant: "ghost",
               },
             ]}
-          />
+          /> 
           {!isCollapsed && <Separator type="text" text="Sales" />}
           <Nav
             isCollapsed={isCollapsed}
