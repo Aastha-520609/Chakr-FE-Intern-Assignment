@@ -17,8 +17,8 @@ import {
     Contact,
     SquareCheckBig,
     CalendarSearch,
-    HandHeart,
     HeartHandshake,
+    ReceiptText,
     Users2,
     PanelLeftClose,
     PanelRightClose,
@@ -52,7 +52,7 @@ export default function SideNavbar({}: Props) {
             links={[  
               {
                 title: "Dashboard",
-                href: "/dashboard",
+                href: "/",
                 icon: LayoutDashboardIcon,
                 variant: "default",
               },
@@ -111,6 +111,12 @@ export default function SideNavbar({}: Props) {
                 variant: "ghost",
               },
               {
+                title: "Contracts",
+                href: "/contracts",
+                icon: ReceiptText,
+                variant: "ghost",
+              },
+              {
                 title: "Contacts",
                 href: "/contacts",
                 icon: Contact,
@@ -144,12 +150,6 @@ export default function SideNavbar({}: Props) {
                 title: "Forums",
                 href: "/forums",
                 icon: Users2,
-                variant: "ghost",
-              },
-              {
-                title: "Contribution",
-                href: "/contribution",
-                icon: HandHeart,
                 variant: "ghost",
               },
               {
