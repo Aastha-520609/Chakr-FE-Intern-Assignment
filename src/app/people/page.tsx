@@ -4,7 +4,7 @@ type Props = {}
 
 function peoplePage({}: Props) {
   return (
-    <div>People's Page</div>
+    <div>People Page</div>
   )
 }
 

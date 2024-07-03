@@ -4,7 +4,7 @@ type Props = {}
 
 function settingsPage({}: Props) {
   return (
-    <div>Setting's Page</div>
+    <div>Settings Page</div>
   )
 }
 
