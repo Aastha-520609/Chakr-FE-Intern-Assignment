@@ -1,3 +1,6 @@
+## Deployment Link
+https://crm-7l1l8yt1v-aasthas-projects-e988b270.vercel.app/
+
 # "Create a CRM in NextJS" frontend challenge
 
 Welcome. For this project, we will be rigorously testing your abilities to design complete, easy-to-use, and attractive frontend UIs using a modern tech stack. We will be assessing you on your code quality, design sense, and attention to detail. Please aim to spend about 15 hours on this task. This task is intentionally open-ended to test how you approach architectural decisions and turn broad ideas into specific features.
